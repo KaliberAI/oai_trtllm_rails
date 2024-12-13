@@ -2,7 +2,7 @@ require_relative "lib/oai_trtllm_rails/version"
 
 Gem::Specification.new do |spec|
   spec.name        = "oai_trtllm_rails"
-  kkspec.version     = OaiTrtllmRails::VERSION
+  spec.version     = OaiTrtllmRails::VERSION
   spec.authors     = [ "Mason Stallmo" ]
   spec.email       = [ "mason@kaliber.ai" ]
   spec.homepage    = "https://github.com/kaliberai/oai_trtllm_rails"
