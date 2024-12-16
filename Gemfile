@@ -1,5 +1,7 @@
 source "https://rubygems.org"
 
+gem "nv_triton", path: "../nv_triton"
+
 # Specify your gem's dependencies in oai_trtllm_rails.gemspec.
 gemspec
 
