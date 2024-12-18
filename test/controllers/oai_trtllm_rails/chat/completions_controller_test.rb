@@ -13,7 +13,7 @@ module OaiTrtllmRails::Chat
       def mock.chat(model_name:, input:, model_params:); "The Chicago Cubs"; end
 
       OaiTrtllmRails.stub :triton_client, mock do
-        post chat_completions_url, params: {model: "llama-3.1-8B-instruct", messages: ["who won the 2016 world series?"]}
+        post chat_completions_url, params: {model: "llama-3.1-8B-instruct", messages: [{ role: "user", content: "who won the 2016 world series?"}]}
         assert_equal @response.parsed_body["choices"][0]["message"]["content"], "The Chicago Cubs"
       end
     end
@@ -27,7 +27,7 @@ module OaiTrtllmRails::Chat
       end
 
       OaiTrtllmRails.stub :triton_client, mock do
-        post chat_completions_url, params: {model: "llama-3.1-8B-instruct", messages: ["who won the 2016 world series?"]}
+        post chat_completions_url, params: {model: "llama-3.1-8B-instruct", messages: [{ role: "user", content: "who won the 2016 world series?"}]}
         assert_equal @response.parsed_body["choices"][0]["message"]["content"], "The Chicago Cubs"
       end
 
@@ -43,7 +43,7 @@ module OaiTrtllmRails::Chat
       end
 
       OaiTrtllmRails.stub :triton_client, mock do
-        post chat_completions_url, params: {model: "llama-3.1-8B-instruct", messages: ["who won the 2016 world series?"], frequency_penalty: -2.0}
+        post chat_completions_url, params: {model: "llama-3.1-8B-instruct", messages: [{ role: "user", content: "who won the 2016 world series?"}], frequency_penalty: -2.0}
         assert_equal @response.parsed_body["choices"][0]["message"]["content"], "The Chicago Cubs"
       end
 
@@ -59,7 +59,7 @@ module OaiTrtllmRails::Chat
       end
 
       OaiTrtllmRails.stub :triton_client, mock do
-        post chat_completions_url, params: {model: "llama-3.1-8B-instruct", messages: ["who won the 2016 world series?"], max_tokens: 50}
+        post chat_completions_url, params: {model: "llama-3.1-8B-instruct", messages: [{ role: "user", content: "who won the 2016 world series?"}], max_tokens: 50}
         assert_equal @response.parsed_body["choices"][0]["message"]["content"], "The Chicago Cubs"
       end
 
@@ -75,7 +75,7 @@ module OaiTrtllmRails::Chat
       end
 
       OaiTrtllmRails.stub :triton_client, mock do
-        post chat_completions_url, params: {model: "llama-3.1-8B-instruct", messages: ["who won the 2016 world series?"], presence_penalty: -2.0}
+        post chat_completions_url, params: {model: "llama-3.1-8B-instruct", messages: [{ role: "user", content: "who won the 2016 world series?"}], presence_penalty: -2.0}
         assert_equal @response.parsed_body["choices"][0]["message"]["content"], "The Chicago Cubs"
       end
 
@@ -91,7 +91,7 @@ module OaiTrtllmRails::Chat
       end
 
       OaiTrtllmRails.stub :triton_client, mock do
-        post chat_completions_url, params: {model: "llama-3.1-8B-instruct", messages: ["who won the 2016 world series?"], stop: ["curse"]}
+        post chat_completions_url, params: {model: "llama-3.1-8B-instruct", messages: [{ role: "user", content: "who won the 2016 world series?"}], stop: ["curse"]}
         assert_equal @response.parsed_body["choices"][0]["message"]["content"], "The Chicago Cubs"
       end
 
@@ -107,7 +107,7 @@ module OaiTrtllmRails::Chat
       end
 
       OaiTrtllmRails.stub :triton_client, mock do
-        post chat_completions_url, params: {model: "llama-3.1-8B-instruct", messages: ["who won the 2016 world series?"], n: 2}
+        post chat_completions_url, params: {model: "llama-3.1-8B-instruct", messages: [{ role: "user", content: "who won the 2016 world series?"}], n: 2}
         assert_equal @response.parsed_body["choices"][0]["message"]["content"], "The Chicago Cubs"
       end
 
@@ -123,7 +123,7 @@ module OaiTrtllmRails::Chat
       end
 
       OaiTrtllmRails.stub :triton_client, mock do
-        post chat_completions_url, params: {model: "llama-3.1-8B-instruct", messages: ["who won the 2016 world series?"], temperature: 0.5}
+        post chat_completions_url, params: {model: "llama-3.1-8B-instruct", messages: [{ role: "user", content: "who won the 2016 world series?"}], temperature: 0.5}
         assert_equal @response.parsed_body["choices"][0]["message"]["content"], "The Chicago Cubs"
       end
 
@@ -139,7 +139,7 @@ module OaiTrtllmRails::Chat
       end
 
       OaiTrtllmRails.stub :triton_client, mock do
-        post chat_completions_url, params: {model: "llama-3.1-8B-instruct", messages: ["who won the 2016 world series?"], top_p: 0.5}
+        post chat_completions_url, params: {model: "llama-3.1-8B-instruct", messages: [{ role: "user", content: "who won the 2016 world series?"}], top_p: 0.5}
         assert_equal @response.parsed_body["choices"][0]["message"]["content"], "The Chicago Cubs"
       end
 
