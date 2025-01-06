@@ -1,9 +1,7 @@
 # frozen_string_literal: true
 
 module OaiTrtllmRails::Chat
-  class CompletionsController < ApplicationController
-    skip_before_action :verify_authenticity_token
-
+  class CompletionsController < OaiTrtllmRails::ApplicationController
     def completion
       model_params = NvTriton::ModelParams.new(OaiTritonParamConverter.new(completion_params.to_h).convert)
       output = OaiTrtllmRails.triton_client.chat(

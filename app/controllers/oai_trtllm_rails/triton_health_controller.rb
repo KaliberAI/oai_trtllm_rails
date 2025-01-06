@@ -1,7 +1,9 @@
 # frozen_string_literal: true
 
 module OaiTrtllmRails
-  class TritonHealthController < ApplicationController
+  class TritonHealthController < OaiTrtllmRails::ApplicationController
+    allow_unauthenticated_access only: %i[ health_check ]
+
     def health_check
       if OaiTrtllmRails.triton_client.healthy?
         head :ok

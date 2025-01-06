@@ -1,5 +1,6 @@
 module OaiTrtllmRails
-  class ApplicationController < ActionController::Base
+  class ApplicationController < ActionController::API
+    include ApiAuthentication
     rescue_from GRPC::Unavailable, with: :grpc_unavailable
 
     protected
