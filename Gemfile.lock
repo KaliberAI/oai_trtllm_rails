@@ -1,5 +1,6 @@
-PATH
-  remote: ../nv_triton
+GIT
+  remote: https://github.com/kaliberai/nv_triton
+  revision: 051c728502921ec3c117454d86a9718258799a68
   specs:
     nv_triton (0.1.0)
       erb (~> 4.0)
